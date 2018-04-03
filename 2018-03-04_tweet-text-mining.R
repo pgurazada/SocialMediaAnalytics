@@ -65,8 +65,8 @@ meta <- tibble(id = as.numeric(dimnames(disaster_dtm)[[1]])) %>%
 
 training_rows <- createDataPartition(meta$disaster, p = 0.8, list = FALSE, times = 1)
 
-disaster_train_df <- disaster_dtm[training_rows, ] %>% as.matrix() %>% as.data.frame() %>% drop_na() 
-disaster_test_df <- disaster_dtm[-training_rows, ] %>% as.matrix() %>% as.data.frame() %>% drop_na()
+disaster_train_df <- disaster_dtm[training_rows, ] %>% as.matrix() %>% as.data.frame() 
+disaster_test_df <- disaster_dtm[-training_rows, ] %>% as.matrix() %>% as.data.frame() 
 
 dim(disaster_train_df)
 
